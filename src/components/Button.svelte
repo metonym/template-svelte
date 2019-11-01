@@ -19,13 +19,12 @@
 </style>
 
 <h1>{count}</h1>
-<p>Count incremented by {increment}</p>
 
 <button
   on:click={() => {
     count = add(count, increment);
   }}>
-  Increment
+  Increment by {increment}
 </button>
 
 {#if displayResetButton}

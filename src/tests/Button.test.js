@@ -7,13 +7,13 @@ function setup(props = {}) {
 
 test('shows proper heading when rendered', () => {
   const { getByText } = setup();
-  expect(getByText('Count incremented by 1')).toBeInTheDocument();
+  expect(getByText('Increment by 1')).toBeInTheDocument();
 });
 
 test('changes button text on click', async () => {
   const { getByText, queryByText } = setup({ increment: 2 });
 
-  expect(getByText('Count incremented by 2')).toBeInTheDocument();
-  await fireEvent.click(getByText('Increment'));
+  expect(getByText('Increment by 2')).toBeInTheDocument();
+  await fireEvent.click(getByText('Increment by 2'));
   expect(getByText('Reset')).toBeInTheDocument();
 });

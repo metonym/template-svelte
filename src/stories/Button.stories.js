@@ -2,12 +2,9 @@ import Button from '../components/Button.svelte';
 
 export default { title: 'Button' };
 
-export const Default = () => ({
-  Component: Button,
-  props: {}
-});
+export const Default = () => ({ Component: Button });
 
-export const Increment = () => ({
+export const IncrementBy2 = () => ({
   Component: Button,
   props: { increment: 2 }
 });
