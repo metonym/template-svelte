@@ -4,3 +4,4 @@ cache: yarn
 script:
   - yarn test --coverage
   - yarn build
+after_success: npx codecov
