@@ -1,5 +1,8 @@
 # template-svelte
 
+[![Build Status](https://travis-ci.com/metonym/template-svelte.svg?branch=master)](https://travis-ci.com/metonym/template-svelte)
+[![codecov](https://img.shields.io/codecov/c/github/metonym/template-svelte.svg)](https://codecov.io/gh/metonym/template-svelte)
+
 > Template for developing [Svelte](https://github.com/sveltejs/svelte) libraries.
 
 ## Getting Started
