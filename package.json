@@ -1,0 +1,53 @@
+{
+  "name": "template-svelte",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Template for developing Svelte libraries",
+  "author": "Eric Liu (https://github.com/metonym)",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@storybook/cli": "^5.2.5",
+    "@storybook/svelte": "^5.2.5",
+    "@testing-library/jest-dom": "^4.2.2",
+    "@testing-library/svelte": "^1.9.0",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
+    "jest-transform-svelte": "^2.1.0",
+    "regenerator-runtime": "^0.13.3",
+    "rollup": "^1.26.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.1.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "shelljs": "^0.8.3",
+    "svelte": "^3.12.1",
+    "svelte-loader": "^2.13.6"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.svelte$": "jest-transform-svelte",
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "svelte"
+    ],
+    "setupFilesAfterEnv": [
+      "regenerator-runtime/runtime",
+      "@testing-library/jest-dom/extend-expect"
+    ]
+  }
+}
