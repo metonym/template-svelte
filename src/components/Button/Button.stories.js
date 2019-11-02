@@ -1,4 +1,4 @@
-import Button from '../components/Button.svelte';
+import Button from './Button.svelte';
 
 export default { title: 'Button' };
 

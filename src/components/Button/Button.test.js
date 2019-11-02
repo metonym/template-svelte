@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/svelte';
-import Button from '../components/Button.svelte';
+import Button from './Button.svelte';
 
 function setup(props = {}) {
   return render(Button, { props });
