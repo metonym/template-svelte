@@ -1,10 +1,9 @@
+import { withKnobs, number } from '@storybook/addon-knobs';
 import Button from './Button.svelte';
 
-export default { title: 'Button' };
+export default { title: 'Button', decorators: [withKnobs] };
 
-export const Default = () => ({ Component: Button });
-
-export const IncrementBy2 = () => ({
+export const Default = () => ({
   Component: Button,
-  props: { increment: 2 }
+  props: { increment: number('increment', 1) }
 });
