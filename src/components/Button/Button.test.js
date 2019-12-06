@@ -16,4 +16,5 @@ test('changes button text on click', async () => {
   expect(getByText('Increment by 2')).toBeInTheDocument();
   await fireEvent.click(getByText('Increment by 2'));
   expect(getByText('Reset')).toBeInTheDocument();
+  await fireEvent.click(getByText('Reset'));
 });
