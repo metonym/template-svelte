@@ -1,7 +1,7 @@
 <script>
   export let increment = 1;
 
-  import { add } from "./add";
+  import { add } from './add';
 
   let count = 0;
 

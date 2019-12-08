@@ -43,6 +43,11 @@
       "pre-commit": "pretty-quick --pattern 'src/**/*.{js,svelte}' --staged"
     }
   },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  },
   "babel": {
     "presets": [
       "@babel/preset-env"
