@@ -10,7 +10,7 @@
     "start": "start-storybook -p 9000",
     "build": "rollup -c",
     "build:docs": "build-storybook -o docs",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -20,7 +20,7 @@
     "@storybook/cli": "^5.2.6",
     "@storybook/svelte": "^5.2.6",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/svelte": "^1.9.1",
+    "@testing-library/svelte": "^1.11.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "jest": "^24.9.0",
