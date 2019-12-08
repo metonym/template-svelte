@@ -1,8 +1,17 @@
 <script>
-  import { add } from './add';
   export let increment = 1;
 
+  import { add } from "./add";
+
   let count = 0;
+
+  function handleClick() {
+    count = add(count, increment);
+  }
+
+  function resetCount() {
+    count = 0;
+  }
 
   $: displayResetButton = count > 0;
 </script>
@@ -20,18 +29,8 @@
 
 <h1>{count}</h1>
 
-<button
-  on:click={() => {
-    count = add(count, increment);
-  }}>
-  Increment by {increment}
-</button>
+<button on:click={handleClick}>Increment by {increment}</button>
 
 {#if displayResetButton}
-  <button
-    on:click={() => {
-      count = 0;
-    }}>
-    Reset
-  </button>
+  <button on:click={resetCount}>Reset</button>
 {/if}

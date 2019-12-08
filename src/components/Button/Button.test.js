@@ -1,20 +1,45 @@
-import { fireEvent, render } from '@testing-library/svelte';
-import Button from './Button.svelte';
+import { fireEvent, render } from "@testing-library/svelte";
+import Button from "./Button.svelte";
 
 function setup(props = {}) {
-  return render(Button, { props });
+  return render(Button, props);
 }
 
-test('shows proper heading when rendered', () => {
-  const { getByText } = setup();
-  expect(getByText('Increment by 1')).toBeInTheDocument();
+test("increments and resets the count", async () => {
+  const { getByText, container } = render(Button, {});
+
+  const h1 = container.querySelector("h1");
+  expect(h1.innerHTML).toEqual("0");
+
+  const button = getByText("Increment by 1");
+  expect(button).toBeInTheDocument();
+  await fireEvent.click(button);
+  expect(h1.innerHTML).toEqual("1");
+
+  const reset = getByText("Reset");
+  expect(reset).toBeInTheDocument();
+  await fireEvent.click(reset);
+  expect(reset).not.toBeInTheDocument();
+  expect(h1.innerHTML).toEqual("0");
 });
 
-test('changes button text on click', async () => {
-  const { getByText, queryByText } = setup({ increment: 2 });
+test("increments count by 2", async () => {
+  const { getByText, container } = render(Button, { increment: 2 });
 
-  expect(getByText('Increment by 2')).toBeInTheDocument();
-  await fireEvent.click(getByText('Increment by 2'));
-  expect(getByText('Reset')).toBeInTheDocument();
-  await fireEvent.click(getByText('Reset'));
+  const h1 = container.querySelector("h1");
+  expect(h1.innerHTML).toEqual("0");
+
+  const button = getByText("Increment by 2");
+  expect(button).toBeInTheDocument();
+  await fireEvent.click(button);
+
+  expect(h1.innerHTML).toEqual("2");
+  await fireEvent.click(button);
+  expect(h1.innerHTML).toEqual("4");
+
+  const reset = getByText("Reset");
+  expect(reset).toBeInTheDocument();
+  await fireEvent.click(reset);
+  expect(reset).not.toBeInTheDocument();
+  expect(h1.innerHTML).toEqual("0");
 });
