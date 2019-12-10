@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/metonym/template-svelte.svg?branch=master)](https://travis-ci.com/metonym/template-svelte)
 [![codecov](https://img.shields.io/codecov/c/github/metonym/template-svelte.svg)](https://codecov.io/gh/metonym/template-svelte)
 
-> Template for developing [Svelte](https://github.com/sveltejs/svelte) libraries.
+> Template for building [Svelte](https://github.com/sveltejs/svelte) libraries with Storybook and Rollup.
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ Builds the library for production using [Rollup](https://github.com/rollup/rollu
 
 ### `yarn test`
 
-Runs tests using [Jest](https://github.com/facebook/jest) with [@testing-library/svelte](https://github.com/testing-library/svelte-testing-library).
+Runs tests using [Jest](https://github.com/facebook/jest) with [@testing-library/svelte](https://github.com/testing-library/svelte-testing-library) and generates a coverage report.
 
 ## License
 
