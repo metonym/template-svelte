@@ -18,6 +18,7 @@ export default ['es', 'umd'].map(format => {
   return {
     input: 'src',
     output,
+    external: UMD ? [] : Object.keys(pkg.dependencies || {}),
     plugins: [svelte(), resolve(), UMD && terser()]
   };
 });
