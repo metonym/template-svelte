@@ -5,13 +5,11 @@
 
 > Template for building [Svelte](https://github.com/sveltejs/svelte) libraries with Storybook and Rollup.
 
-This template provides a set-up for developing, building and publishing Svelte component libraries.
-
 ## Workflow
 
-- **Developing**: Storybook ([config](.storybook))
-- **Testing**: [Jest](https://jestjs.io/) + [@testing-library/svelte](https://github.com/testing-library/svelte-testing-library)
-- **Formatting**: [Prettier](https://prettier.io/) + [prettier-plugin-svelte](https://github.com/UnwrittenFun/prettier-plugin-svelte)
+- **Development & Documentation**: Storybook ([config](.storybook))
+- **Unit Testing**: [Jest](https://jestjs.io/) + [@testing-library/svelte](https://github.com/testing-library/svelte-testing-library)
+- **Code Formatting**: [Prettier](https://prettier.io/) + [prettier-plugin-svelte](https://github.com/UnwrittenFun/prettier-plugin-svelte)
 - **Continuous Integration**: Travis CI ([config](.travis.yml))
 - **Building**: Rollup ([config](rollup.config.js))
 
@@ -51,6 +49,10 @@ Builds the library for production using [Rollup](https://github.com/rollup/rollu
 }
 ```
 
+### `yarn build:docs`
+
+Builds the Storybook for production and outputs files to the `docs` folder. This template uses [GitHub pages](https://pages.github.com/) for hosting the Storybook.
+
 ### `yarn test`
 
 Runs tests using [Jest](https://github.com/facebook/jest) with [@testing-library/svelte](https://github.com/testing-library/svelte-testing-library) and generates a coverage report.
@@ -59,7 +61,7 @@ Runs tests using [Jest](https://github.com/facebook/jest) with [@testing-library
 
 ### 1) Update the Library Name
 
-Update the library name if you haven't already.
+Update the library name in [package.json](package.json) and [rollup.config.js](rollup.config.js).
 
 ```diff
 {
@@ -78,10 +80,10 @@ if (UMD) {
 
 ### 2) Add Publishing Metadata
 
-```json
+```js
 // package.json
 {
-  "files": ["lib", "src"], // include the `src` folder for the `svelte` entry
+  "files": ["lib", "src"], // `src` must be included for the `svelte` entry
   "repository": {
     "type": "git",
     "url": "https://github.com/<USER_NAME>/<REPO_NAME>.git"
@@ -92,7 +94,7 @@ if (UMD) {
 
 ### 3) Publishing
 
-Build the library before publishing:
+**Important**: Build the library in the UMD, ES formats before publishing:
 
 ```sh
 yarn build
