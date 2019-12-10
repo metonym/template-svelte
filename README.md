@@ -10,9 +10,9 @@ This template provides a set-up for developing, building and publishing Svelte c
 ## Workflow
 
 - **Developing**: Storybook ([config](.storybook))
-- **Testing**: Jest + [@testing-library/svelte](https://github.com/testing-library/svelte-testing-library)
-- **Formatting**: Prettier + [prettier-plugin-svelte](https://github.com/UnwrittenFun/prettier-plugin-svelte)
-- **CI**: Travis CI ([config](.travis.yml))
+- **Testing**: [Jest](https://jestjs.io/) + [@testing-library/svelte](https://github.com/testing-library/svelte-testing-library)
+- **Formatting**: [Prettier](https://prettier.io/) + [prettier-plugin-svelte](https://github.com/UnwrittenFun/prettier-plugin-svelte)
+- **Continuous Integration**: Travis CI ([config](.travis.yml))
 - **Building**: Rollup ([config](rollup.config.js))
 
 ## Getting Started
@@ -42,10 +42,10 @@ Builds the library for production using [Rollup](https://github.com/rollup/rollu
 
 #### Build Formats
 
-```json
+```js
 // package.json
 {
-  "svelte": "src/index.js", // used by Svelte if specified
+  "svelte": "src/index.js", // preferred Svelte entry
   "main": "lib/index.js", // UMD build
   "module": "lib/index.mjs" // ES Module build
 }
@@ -63,16 +63,16 @@ Update the library name if you haven't already.
 
 ```diff
 {
-  - "name": "template-svelte",
-  + "name": "<YOUR_LIBRARY_NAME>"
+- "name": "template-svelte",
++ "name": "<YOUR_LIBRARY_NAME>"
 }
 ```
 
 ```diff
 // rollup.config.js
 if (UMD) {
-  - output.name = 'template-svelte';
-  + output.name = '<YOUR_LIBRARY_NAME>';
+- output.name = 'template-svelte';
++ output.name = '<YOUR_LIBRARY_NAME>';
 }
 ```
 
@@ -114,7 +114,7 @@ yarn publish
     "build": "rollup -c",
     "build:docs": "build-storybook -o docs",
     "test": "jest --coverage",
-  + "prepublishOnly": "yarn build"
++   "prepublishOnly": "yarn build"
   }
 }
 ```
