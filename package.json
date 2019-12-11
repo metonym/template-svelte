@@ -43,8 +43,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --pattern 'src/**/*.{js,svelte}' --staged"
+      "pre-commit": "lint-staged && pretty-quick --pattern 'src/**/*.{js,svelte}' --staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,svelte}": [
+      "eslint --fix 'src/**'",
+      "git add"
+    ]
   },
   "prettier": {
     "tabWidth": 2,
