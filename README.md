@@ -10,6 +10,7 @@
 - **Development & Documentation**: Storybook ([config](.storybook))
 - **Unit Testing**: [Jest](https://jestjs.io/) + [@testing-library/svelte](https://github.com/testing-library/svelte-testing-library)
 - **Code Formatting**: [Prettier](https://prettier.io/) + [prettier-plugin-svelte](https://github.com/UnwrittenFun/prettier-plugin-svelte)
+- **Linting**: [ESLint](https://eslint.org/) + [eslint-plugin-svelte3](https://github.com/sveltejs/eslint-plugin-svelte3)
 - **Continuous Integration**: Travis CI ([config](.travis.yml))
 - **Building**: Rollup ([config](rollup.config.js))
 
