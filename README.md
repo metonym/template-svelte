@@ -139,7 +139,7 @@ Open your VSCode `settings.json`.
 
 You must explicitly specify the `editor.defaultFormatter` for `.svelte` files. Otherwise, VSCode will attempt to use the Prettier default formatter, which may not be able to parse `.svelte` files.
 
-```json
+```js
 // settings.json
 {
   // ...other VSCode settings
