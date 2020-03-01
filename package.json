@@ -34,7 +34,7 @@
     "prettier-plugin-svelte": "^0.7.0",
     "pretty-quick": "^2.0.1",
     "regenerator-runtime": "^0.13.3",
-    "rollup": "^1.27.14",
+    "rollup": "^1.32.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.2.0",
