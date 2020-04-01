@@ -1,6 +1,6 @@
 {
   "name": "template-svelte",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "Template for building Svelte libraries with Storybook and Rollup",
   "author": "Eric Liu (https://github.com/metonym)",
