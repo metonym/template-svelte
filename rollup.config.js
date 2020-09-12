@@ -1,24 +1,21 @@
-import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
-import resolve from 'rollup-plugin-node-resolve';
-import svelte from 'rollup-plugin-svelte';
+import { terser } from "rollup-plugin-terser";
+import pkg from "./package.json";
+import resolve from "rollup-plugin-node-resolve";
+import svelte from "rollup-plugin-svelte";
 
-export default ['es', 'umd'].map(format => {
-  const UMD = format === 'umd';
+export default ["es", "umd"].map((format) => {
+  const UMD = format === "umd";
 
   const output = {
     format,
-    file: UMD ? pkg.main : pkg.module
+    file: UMD ? pkg.main : pkg.module,
+    name: UMD ? "TemplateSvelte" : undefined,
   };
 
-  if (UMD) {
-    output.name = 'template-svelte';
-  }
-
   return {
-    input: 'src',
+    input: "src",
     output,
     external: Object.keys(pkg.dependencies || {}),
-    plugins: [svelte(), resolve(), UMD && terser()]
+    plugins: [svelte(), resolve(), UMD && terser()],
   };
 });
