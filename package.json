@@ -11,6 +11,7 @@
     "start": "start-storybook -p 9000",
     "build": "rollup -c",
     "build:docs": "build-storybook -o docs",
+    "deploy": "npx gh-pages -d docs",
     "test": "jest --coverage"
   },
   "devDependencies": {
@@ -73,8 +74,5 @@
       "regenerator-runtime/runtime",
       "@testing-library/jest-dom/extend-expect"
     ]
-  },
-  "resolutions": {
-    "**/*/mem": ">=4.0.0"
   }
 }
