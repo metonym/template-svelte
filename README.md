@@ -16,10 +16,10 @@
 
 ## Getting Started
 
-Clone the repository:
+Scaffold a new project using [degit](https://github.com/Rich-Harris/degit):
 
 ```bash
-git clone git@github.com:metonym/template-svelte.git
+npx degit metonym/template-svelte template-svelte
 cd template-svelte
 ```
 
@@ -107,7 +107,7 @@ Publish the package to `npm`.
 yarn publish
 ```
 
-**Recommendation**: Add the `prepublishOnly` command to [package.json](package.json) to automatically run the build script before publishing the package.
+**Recommendation**: Add the `prepackOnly` command to [package.json](package.json) to automatically run the build script before publishing the package to NPM.
 
 ```diff
 // package.json
@@ -117,39 +117,7 @@ yarn publish
     "build": "rollup -c",
     "build:docs": "build-storybook -o docs",
     "test": "jest --coverage",
-+   "prepublishOnly": "yarn build"
-  }
-}
-```
-
-## Recommended Set-up
-
-### VSCode
-
-#### 1) Install Extensions
-
-Install the following extensions for Svelte syntax highlighting, intellisense and auto-formatting.
-
-- **Svelte**: (`jamesbirtles.svelte-vscode`) [github](https://github.com/UnwrittenFun/svelte-vscode)
-- **Prettier - Code formatter**: (`esbenp.prettier-vscode`) [github](https://github.com/prettier/prettier-vscode)
-
-#### 2) Configure Settings
-
-Open your VSCode `settings.json`.
-
-You must explicitly specify the `editor.defaultFormatter` for `.svelte` files. Otherwise, VSCode will attempt to use the Prettier default formatter, which may not be able to parse `.svelte` files.
-
-```js
-// settings.json
-{
-  // ...other VSCode settings
-  "editor.formatOnSave": true, // auto-formats files using the Prettier extension
-  "files.associations": {
-    "*.html": "html",
-    "*.svelte": "svelte" // enable syntax highlighting using the Svelte extension
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "JamesBirtles.svelte-vscode"
++   "prepackOnly": "yarn build"
   }
 }
 ```
