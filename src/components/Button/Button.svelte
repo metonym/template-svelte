@@ -1,7 +1,7 @@
 <script>
   export let increment = 1;
 
-  import { add } from './add';
+  import { add } from "./add";
 
   let count = 0;
 
@@ -29,8 +29,6 @@
 
 <h1>{count}</h1>
 
-<button on:click={handleClick}>Increment by {increment}</button>
+<button on:click="{handleClick}">Increment by {increment}</button>
 
-{#if displayResetButton}
-  <button on:click={resetCount}>Reset</button>
-{/if}
+{#if displayResetButton}<button on:click="{resetCount}">Reset</button>{/if}
