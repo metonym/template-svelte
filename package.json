@@ -14,31 +14,31 @@
     "test": "jest --coverage"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.8.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
     "@storybook/addon-knobs": "^5.3.18",
     "@storybook/addon-storysource": "^5.3.18",
     "@storybook/cli": "^5.3.18",
     "@storybook/svelte": "^5.3.18",
-    "@testing-library/jest-dom": "^5.3.0",
+    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/svelte": "^1.11.0",
     "babel-jest": "^25.2.4",
     "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-svelte3": "^2.7.3",
-    "husky": "^4.2.3",
+    "husky": "^4.3.0",
     "jest": "^25.2.4",
     "jest-transform-svelte": "^2.1.1",
-    "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1",
-    "prettier-plugin-svelte": "^0.7.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1",
+    "prettier-plugin-svelte": "^1.2.1",
     "pretty-quick": "^2.0.1",
-    "regenerator-runtime": "^0.13.3",
-    "rollup": "^1.32.0",
+    "regenerator-runtime": "^0.13.7",
+    "rollup": "^2.26.11",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svelte": "^5.1.1",
-    "rollup-plugin-terser": "^5.3.0",
-    "svelte": "^3.19.1",
+    "rollup-plugin-svelte": "^6.0.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "^3.25.0",
     "svelte-loader": "^2.13.6"
   },
   "husky": {
@@ -53,9 +53,7 @@
     ]
   },
   "prettier": {
-    "tabWidth": 2,
-    "semi": true,
-    "singleQuote": true
+    "svelteStrictMode": true
   },
   "babel": {
     "presets": [
